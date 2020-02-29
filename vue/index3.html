@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>vue.js</title>
+</head>
+<body>
+<div id="app">
+	<button v-on:click="increase">+</button>
+	<button v-on:click="decrease">-</button>
+	<div>{{counter}}</div>
+</div>
+<script src="https://unpkg.com/vue"></script>
+<script>
+	'use strict'
+	let app = new Vue({
+		el: '#app',
+		data: {counter:0},
+		methods:{
+			increase: function(){
+				this.counter++;
+			},
+			decrease: function(){
+				if(this.counter>0)
+					this.counter--;
+
+			}
+		}
+	});
+</script>
+</body>
+</html>

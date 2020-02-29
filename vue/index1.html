@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue.js</title>
+</head>
+<body>
+<div id="app">
+	<p>{{name}}</p>
+
+	<p>	<div v-html="mssg"></div>{{welcome()}}</p>
+	<p>Name: {{displayName()}}</p>
+	<input type="number" v-on:input="setMessage" />
+	<p>Factorial of {{message}} is equal to {{factorial(message)}}</p>
+	<p>{{age > 25?'Больше 25 лет':'25 лет или меньше'}}</p>
+ 	<a v-bind:href="link">{{text}}</a>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+	'use strict'
+	let app = new Vue({
+		el: '#app',
+		data: {name: 'Tom', age: 25, message: 6, text: 'Google',
+		link: 'https://google.com', mssg: '<h2>Welcome</h2>'},
+		methods: {
+			setMessage: function(event){
+				this.message = event.target.value;
+			},
+			welcome: function(){
+				return "Welcome";
+			},
+			displayName: function(){
+				return this.name;
+			},
+
+			factorial:function(n){
+                let result=1;
+                for(let i=1; i<=n;i++){
+                    result = result * i;
+                }
+                return result;
+            }
+		}
+	})
+</script>
+</body>
+</html>

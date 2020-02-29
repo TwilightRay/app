@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Htnl&Css <3</title>
+  </head>
+  <style media="screen">
+    td{
+      width: 60px;
+      height: 60px;
+      border: solid 1px silver;
+      text-align: center;
+    }
+    a:link {color:orange; text-decoration:none}
+    a:visitet {color:orange; text-decoration:none}
+    a:hover {color:red; text-decoration:underline}
+    a:active {color:yellow; text-decoration:underline}
+  </style>
+  <body>
+<table>
+  <tr>
+    <td rowspan="2" style="background-color:green;">1</td>
+    <td>2</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td colspan="2" style="background-color:yellow;">7</td>
+  </tr>
+</table>
+<a href="#paragraph1">Параграф 1</a> | <a href="#paragraph2">Параграф 2</a>
+| <a href="#paragraph3">Параграф 3</a>
+        <h2 id="paragraph1">Параграф 1</h2>
+        <p>Содержание параграфа 1</p>
+        <h2 id="paragraph2">Параграф 2</h2>
+        <p>Содержание параграфа 2</p>
+        <h2 id="paragraph3">Параграф 3</h2>
+        <p>Содержание параграфа 3</p>
+        <a href="https://www.youtube.com/watch?v=y7e-GC6oGhg"
+        target="_blank"></a>
+        <a href="1.html">Some text</a>
+        <div>
+        <p>lorem ipsum dolor</p>
+        <figure>
+          <figcaption>Февраль 2013</figcaption>
+          <!-- подпись для картинки -->
+          <img src="1.png" alt="Красота">
+        </figure>
+        <p>lorem ipsum dolor</p>
+      </div>
+      <iframe src="http://wikipedia.com" width="400" height="200"></iframe>
+      <form autocomplete="off" action="index.html" method="post">
+        <input name="login" autocomplete="on">
+        <input name="password">
+        <input value="Войти" type="submit">
+        <input type="password" name="" value="">
+        <input type="radio" name="" value="">
+        <br>
+        <input type="checkbox" name="" value="">
+        <input type="hidden" name="" value="">
+        <input type="submit" name="" value="">
+        <input type="color" name="" value="">
+        <input type="date" name="" value="">
+        <input type="datetime" name="" value="">
+        <input type="datetime-local" name="" value="">
+        <input type="email" name="" value="">
+        <input type="month" name="" value="">
+        <input type="number" name="" value="">
+        <input type="range" name="" value="">
+        <input type="tel" name="" value="">
+        <input type="time number" name="" value="">
+        <input type="time" name="" value="">
+        <input type="week" name="" value="">
+        <input type="url" name="" value="">
+        <input type="file" name="" value="">
+        <input type="image" name="" value="">
+        <input type="button" name="" value="">
+        <input type="select" name="" value="">
+        <input type="label" name="" value="">
+        <input type="textarea" name="" value="">
+        <br><br><br><br><br>
+        </form>
+        <form class="" action="2.html" method="get">
+          <input type="text" name="login" value="Tom">
+          <input type="password" name="password" value="">
+          <p>
+          <input type="submit" formmethod="get"
+           formaction="2.html" value="Войти"/>
+          <button type="reset" name="button">Отмена</button>
+          </p>
+          <input type="image" name="submit" src="1.png">
+        </form>
+        <form>
+          <p><input type="text" name="userName" placeholder="Введите имя"
+          size="18"/> </p>
+          <p>
+            <input type="text" name="userPhone" size="18" maxlength="11"
+            placeholder="Введите номер телефона"/>
+          </p>
+          <p>
+            <button type="submit" name="button">Отправить</button>
+            <button type="reset" name="button">Отмена</button>
+          </p>
+          <p>
+            <input type="text" name="" value="+57655887676" disabled>
+          </p>
+        </form>
+        <form>
+          <p>
+            <input list="phonelist"
+             type="text" name="model" placeholder="Введите модель">
+          <p>
+          </p>
+          <button type="submit" name="button">Отправить</button>
+          </p>
+        </form>
+        <datalist id="phonelist">
+                    <option value="iphone" label="5400"></option>
+                    <option value="lumia">35000</option>
+                    <option value="nexus"></option>
+        </datalist>
+        <form>
+          <input type="search" name="term" value="">
+          <input type="submit" name="" value="Поиск">
+        </form>
+        <p><label for="login">Логин: </label>
+        <input autofocus id="login" type="text" name="userName"
+        placeholder="Введите имя" size="18" /></p>
+        <p>
+        <label for="password">Пароль: </label>
+        <input id="password" type="text" name="userPhone"
+        placeholder="Введите номер телефона" size="18" maxlength="11" />
+        </p>
+           <p>
+               <button type="submit">Отправить</button>
+               <button type="reset">Отмена</button>
+           </p>
+        <form>
+          <p>
+            <label for="age">Возраст: </label>
+            <input type="number" name="age" step="1" min="1" max="100"
+            value="10" id="age"/>
+          </p>
+          <p>
+            <button type="submit">Отправить</button>
+          </p>
+        </form>
+        <form>
+          <p>
+            <label for="price">Цена: </label>
+            <input type="number" name="price" value="10000" step="1000"
+            min="3500" max="100000" id="price" list="priceList">
+          </p>
+          <p>
+            <button type="submit">Отправить</button>
+          </p>
+        </form>
+        <datalist id="priceList">
+              <option value="15000"></option>
+              <option value="20000"></option>
+              <option value="25000"></option>
+        </datalist>
+        <form>
+          <p>
+            <label for="price"></label>
+            1<input type="range" step="10" id="price" max="100" value="1"
+            name="price">100
+          </p>
+          <p>
+            <button type="submit">Отправить</button>
+          </p>
+        </form>
+        <form>
+          <h2>Изучаемые технологии</h2>
+          <p>
+          <input type="checkbox" checked name="HTML5">HTML5
+          <input type="checkbox" name="JavaScript">JavaScript
+          <input type="checkbox" name="Vue.js">Vue.js
+          <input type="checkbox" name="React.js">React.js
+          <input type="checkbox" name="Node.js">Node.js
+          <input type="checkbox" name="Express.js">Express.js
+          </p>
+          <p>
+            <button type="submit">Отправить</button>
+          </p>
+        </form>
+        <form>
+          <h1>Укажите пол</h1>
+        <p>
+          <input type="radio" name="gender" checked value="woman">Женщина
+        </p>
+        <p>
+          <input type="radio" name="gender" value="man">Мужчина
+        </p>
+        <h1>Выберите технологию</h1>
+        <p>
+            <input type="radio" name="tech" value="HTML5" checked>HTML5
+        </p>
+        <p>
+            <input type="radio" name="tech" value=".NET">.Net
+        </p>
+        <p>
+            <input type="radio" name="tech" value="Java">Java
+        </p>
+        </form>
+        <form>
+          <p>
+          <label for="favcolor">Выберите цвет: </label>
+          <input list="colors" type="color" name="favcolor" id="favcolor">
+          </p>
+          <datalist id="colors">
+            <option value="#0000FF" label="blue"></option>
+            <option value="#008000" label="red"></option>
+            <option value="#ff0000" label="green"></option>
+            <option value="#FFFF00" label="yellow"></option>
+          </datalist>
+        </form>
+  </body>
+</html>
