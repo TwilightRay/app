@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Node js",
+  "main": "server.js",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "http": "^0.0.1-security",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Victory <zaowi@gmail.com>",
+  "license": "ISC"
+}
