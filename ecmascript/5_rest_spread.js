@@ -37,12 +37,17 @@ const address = {
   }
 }
 
-const {city, country, street = 'Tverskaya', concat: addressConcat} = address;
+// const {city, country, street = 'Tverskaya', concat: addressConcat} = address;
 // Destructuring внутри объекта
 // concat: addressConcat создается не конкат, а адрессКонкат
 // street = 'Tverskaya' Если улица не определена, то по умолчанию будет Тверская
+// console.log(city);
+// console.log(address.concat());
+// console.log(concat.call(address));
+
+const {city, ... rest} = address
 console.log(city);
+console.log(rest);
 
-console.log(address.concat());
-
-console.log(concat.call(address));
+const newAddress = {...address, street: 'Tverskaya', code: 123}
+console.log(newAddress);
