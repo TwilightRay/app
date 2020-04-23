@@ -18,12 +18,12 @@ export class Question {
 
   static fetch(token) {
     if (!token) {
-      return Promise.resolve('<p class="error">У вас нет токена</p>');
+      return Promise.resolve('<p class="error">У вас нет токена</p>')
     }
     return fetch(`https://twilight-ray.firebaseio.com/questions.json?auth=${token}`)
       .then( response => response.json())
       .then( response => {
-        if (response.error) {
+        if (response && response.error) {
           return `<p class="error">${response.error}</p>`;
         }
         return response ? Object.keys(response).map( key => ({
@@ -47,7 +47,8 @@ export class Question {
 
   static listToHTML (questions) {
     return questions.length
-    ? `<ol>${questions.map(q => `<li>${q.text}</li>`)}</ol>`;
+    ? `<ol>${questions.map(q => `<li>${q.text}</li>`).join('')}</ol>`
+    : '<p>Команд пока нет</p>'
   }
 }
 

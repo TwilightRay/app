@@ -1,7 +1,7 @@
 import {Question} from './question'
 import {createModal, isValid} from './utils'
 import './styles.css'
-import {getAuthForm} from './auth'
+import {getAuthForm, authWithEmailAndPassword} from './auth'
 
 const form = document.getElementById('form')
 const modalBtn = document.getElementById('modal-btn')
@@ -45,7 +45,7 @@ function openModal() {
 function authFormHandler(event) {
   event.preventDefault()
 
-    const btm = event.target.querySelector('button')
+    const btn = event.target.querySelector('button')
     const email = event.target.querySelector('#email').value
     const password = event.target.querySelector('#password').value
 
@@ -53,13 +53,13 @@ function authFormHandler(event) {
     authWithEmailAndPassword(email, password)
       .then(Question.fetch)
       .then(renderModalAfterAuth)
-      .then( => btn.disabled = false)
+      .then( () => btn.disabled = false)
 }
 
 function renderModalAfterAuth(content) {
   if (typeof content === 'string') {
     createModal('Ошибка', content)
   } else {
-    createmodal('Список команд', content)
+    createModal('Список команд', Question.listToHTML(content))
   }
 }
