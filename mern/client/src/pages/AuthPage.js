@@ -1,12 +1,19 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useHttp} from '../hooks/http.hook'
+import {useMessage} from '../hooks/message.hook' // функция для вывода сообщений
 
 export const AuthPage = () => {
-  const {loading, request} = useHttp()
+  const message = useMessage()
+  const {loading, request, error, clearError} = useHttp()
   const [form, setForm] = useState({ // хук useState, stateform и метод setform
     email: '', password: ''
     // state будет объектом из двух полей
   })
+
+  useEffect( () => { // hook
+    message(error)
+    clearError()
+  }, [error, message, clearError])
 
   const changeHandler = event => { // нативный js event
     setForm({...form, [event.target.name]: event.target.value})
@@ -22,8 +29,7 @@ export const AuthPage = () => {
       // получаем данные и ждем возвращения функции реквест с необходимыми параметрами
       // второй параметр метод пост
       // третий данные, передаваемые на сервер
-      console.log('data ', data);
-
+      message(data.message)
     } catch (e) {} // обработка ошибок
   }
 
