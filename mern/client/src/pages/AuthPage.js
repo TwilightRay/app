@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
+import {useHttp} from '../hooks/http.hook'
 
 export const AuthPage = () => {
+  const {loading, request} = useHttp()
   const [form, setForm] = useState({ // хук useState, stateform и метод setform
     email: '', password: ''
     // state будет объектом из двух полей
@@ -14,7 +16,16 @@ export const AuthPage = () => {
     // и передаем в него event.target.value
   }
 
-  
+  const registerHandler = async () => { // регистрация логина
+    try {
+      const data = await request('api/auth/register', 'POST', {...form})
+      // получаем данные и ждем возвращения функции реквест с необходимыми параметрами
+      // второй параметр метод пост
+      // третий данные, передаваемые на сервер
+      console.log('data ', data);
+
+    } catch (e) {} // обработка ошибок
+  }
 
   return (
     <div className="row">
@@ -53,10 +64,15 @@ export const AuthPage = () => {
         <div className="card-action">
           <button
           className="btn yellow darken-4"
-          style={{marginRight: 10}}>
+          style={{marginRight: 10}}
+          disabled={loading}>
           Войти
           </button>
-          <button className="btn grey lighten-1 black-text">Регистрация</button>
+          <button
+          className="btn grey lighten-1 black-text"
+          onClick={registerHandler}
+          disabled={loading}>
+          Регистрация</button>
         </div>
       </div>
       </div>

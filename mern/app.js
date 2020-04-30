@@ -4,6 +4,8 @@ const mongoose = require('mongoose'); // подключаем mongoDB
 
 const app = express() // будущий сервер
 
+app.use(express.json({ extended: true })) // middleware
+
 app.use('/api/auth', require('./routes/auth.routes')) // передаем роут
 
 const PORT = config.get('port') || 5000 // берем из файла значение
