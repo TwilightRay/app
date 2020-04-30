@@ -4,7 +4,8 @@ export const useHttp = () => { // экспорт хука useHttp для раб�
   // запросами на сервер, позволяющий взаимодействовать с сервером
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
-  const request = useCallback( async (url, method = 'GET', body = null, headers = {}) => {
+
+  const request = useCallback(async (url, method = 'GET', body = null, headers = {}) => {
     // useCallback, чтобы  реакт не входил в рекурсию
     setLoading(true)
     try {
@@ -13,6 +14,7 @@ export const useHttp = () => { // экспорт хука useHttp для раб�
         headers['Content-Type'] = 'application/json'
         // если body есть, добавляем этот хедер
       }
+
       const response = await fetch(url, {method, body, headers})
       const data = await response.json()
 

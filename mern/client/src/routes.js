@@ -17,7 +17,7 @@ export const useRoutes = isAuthenticated => {
         <Route path="/create" exact>
           <CreatePage />
         </Route>
-        <Route path="/detail/:id" exact>
+        <Route path="/detail/:id">
           <DetailPage />
         </Route>
         <Redirect to="/create"/>
@@ -28,7 +28,7 @@ export const useRoutes = isAuthenticated => {
   return (
     // пользователь не в системе
     <Switch>
-      <Route path="/">
+      <Route path="/" exact>
         <AuthPage />
       </Route>
       <Redirect to="/"/>

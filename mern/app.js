@@ -1,5 +1,6 @@
 const express = require('express') // подключение пакета
 const config = require('config');
+const path = require('path');
 const mongoose = require('mongoose'); // подключаем mongoDB
 
 const app = express() // будущий сервер

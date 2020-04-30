@@ -1,43 +1,43 @@
-const {Router} = require('express'); // роутер из экспресс
-const User = require('../models/User') // подключение модели
-const config = require('config');
-const jwt = require('jsonwebtoken');
-const {check, valodationResult} = require('express-validator'); // валидация полей на экспрессе
-const bcrypt = require('bcryptjs'); // шифрование
-const router = Router() // создание роутера
+const {Router} = require('express')
+const bcrypt = require('bcryptjs')
+const config = require('config')
+const jwt = require('jsonwebtoken')
+const {check, validationResult} = require('express-validator')
+const User = require('../models/User')
+const router = Router()
+
 
 // /api/auth/register
 router.post(
   '/register',
-  [ // middleware массив для валидации
-    check('email', 'Некорректный email').isEmail(), //если ошибка, то выводит сообщение
+  [
+    check('email', 'Некорректный email').isEmail(),
     check('password', 'Минимальная длина пароля 6 символов')
-      .isLength({ min: 6 }) // валидация
+      .isLength({ min: 6 })
   ],
-   async (req, res) => { // endpoint
+  async (req, res) => {
   try {
-    const errors = validationResult(req) // валидация входящего поля реквест
-    // обрабатываем валидацию
-    if (!errors.isEmpty()) { // если есть какие-то ошибки, возвращаем их на фронт
+    const errors = validationResult(req)
+
+    if (!errors.isEmpty()) {
       return res.status(400).json({
         errors: errors.array(),
-        message: 'Некорректные данные при регистрации'
-      }) // обработка исключения
+        message: 'Некорректный данные при регистрации'
+      })
     }
 
-    const {email, password} = req.body //получаем поля логин и пароль из реквеста боди (c фронта)
+    const {email, password} = req.body
 
-    const candidate = await User.findOne({ email }) //проверка на уникальность почты
-    // ждем, пока база проверяется
+    const candidate = await User.findOne({ email })
 
-    if (candidate) { // если нашллись слвпадения
+    if (candidate) {
       return res.status(400).json({ message: 'Такой пользователь уже существует' })
     }
 
-    const hashedPassword = await bcrypt.hash(password, 12) // шифрование пароля
-    const user = new User({ email, password: hashedPassword }) // создание пользователя после шифрования пароля
+    const hashedPassword = await bcrypt.hash(password, 12)
+    const user = new User({ email, password: hashedPassword })
 
-    await user.save() // ждем, пока юзер сохранится
+    await user.save()
 
     res.status(201).json({ message: 'Пользователь создан' })
 
@@ -45,52 +45,51 @@ router.post(
     res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
   }
 })
+
 // /api/auth/login
 router.post(
   '/login',
   [
     check('email', 'Введите корректный email').normalizeEmail().isEmail(),
-    //приводим к нормальному емейлу и добавляем валидатор isEmail
-    check('password', 'Введите пароль').exists() // валидатор на существование пароля
+    check('password', 'Введите пароль').exists()
   ],
   async (req, res) => {
-    try {
+  try {
+    const errors = validationResult(req)
 
-      const errors = validationResult(req) // валидация входящего поля реквест
-      // обрабатываем валидацию
-      if (!errors.isEmpty()) { // если есть какие-то ошибки, возвращаем их на фронт
-        return res.status(400).json({
-          errors: errors.array(),
-          message: 'Некорректные данные при входе в систему'
-        }) // обработка исключения
-      }
-
-      const {email, password} = req.body // получаем из рек.боди поля мейл и пасс
-
-      const user = await User.findOne({ email }) // ищем пользователя по емейлу
-
-      if (!user) {
-        return res.status(400).json({ message: 'Пользователь не найден' });
-      }
-
-      const isMatch = await bcrypt.compare(password, user.password) // сравниваем захешированные пароли
-
-      if (!isMatch) {
-        return res.status(400).json({ message: 'Неверный пароль, попробуйте снова' });
-      }
-
-      const tocken = jwt.sign(// создаем токен
-        // передаем параметры
-        {userId: user.id }, // объект с данными, которые будут зашифрованы в jwt токене, можно добавить и другие, например имя
-        config.get('jwtSecret'),
-        { expiresIn: '1h' } // через сколько токен закончит свое существование
-      )
-
-      res.json({ token, userId: user.id })
-
-    } catch (e) {
-      res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
+    if (!errors.isEmpty()) {
+      return res.status(400).json({
+        errors: errors.array(),
+        message: 'Некорректный данные при входе в систему'
+      })
     }
+
+    const {email, password} = req.body
+
+    const user = await User.findOne({ email })
+
+    if (!user) {
+      return res.status(400).json({ message: 'Пользователь не найден' })
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password)
+
+    if (!isMatch) {
+      return res.status(400).json({ message: 'Неверный пароль, попробуйте снова' })
+    }
+
+    const token = jwt.sign(
+      { userId: user.id },
+      config.get('jwtSecret'),
+      { expiresIn: '1h' }
+    )
+
+    res.json({ token, userId: user.id })
+
+  } catch (e) {
+    res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
+  }
 })
+
 
 module.exports = router

@@ -10,5 +10,5 @@ const schema = new Schema({ // создаем скему через констр
   // можно добавить еще поля
 })
 
-module.export = model('User', schema) // ехпорт из файла результат работы
+module.exports = model('User', schema) // ехпорт из файла результат работы
 // ф-ии модел по схеме скима
