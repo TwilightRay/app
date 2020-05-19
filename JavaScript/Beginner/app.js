@@ -1,38 +1,29 @@
-const name = 'Владимир'
-const age = '22'
-
-function getAge() {
-  return age
+// Функция
+// function expression - можно использовать только после объявления
+const greet2 = function greet2(name) {
+  console.log('Привет 2 - ', name)
 }
 
-const output = `Привет, уменя зовут ${name} и мой возраст ${getAge() < 20 ? 'мало' : getAge()} года`
-console.log(output)
+greet('Лена')
 
-const out = `
-  <title></title>
-  <script src="app.js" charset="utf-8"></script>
-`
-console.log(out)
-
-console.log(name.length)
-console.log(name.toUpperCase())
-console.log(name.toLowerCase())
-console.log(name.charAt(2))
-console.log(name.indexOf('ди'))
-console.log(name.startsWith('Влад'))
-console.log(name.endsWith('Ир'))
-console.log(name.repeat(3))
-const string = '     Vladimir     '
-console.log(string.trim())
-console.log(string.trimLeft())
-console.log(string.trimRight())
-
-function logPerson(s, name, age) {
-  if (age < 0) {
-    age = 'Еще не родился'
-  }
-  return `${s[0]}${name}${s[1]}${age}${s[2]}`
+// function Declaration - можно использовать до и после объявления
+function greet(name) {
+  console.log('Привет - ', name)
 }
 
-const output1 = logPerson`Имя: ${name}, Возраст: ${age}`
-console.log(output1)
+console.dir(greet) // смотрим информацию о функции
+
+// Анонимные функции
+let counter = 0
+// setInterval(function(){
+//   console.log(++counter);
+// }, 1000)
+
+const unterval = setInterval(function(){
+  if (vounter === 5) {
+    clearInterval(interval)
+  } else {
+  console.log(++counter)}
+}, 1000)
+
+// стрелочные ф-ции
