@@ -1,29 +1,47 @@
-// Функция
-// function expression - можно использовать только после объявления
-const greet2 = function greet2(name) {
-  console.log('Привет 2 - ', name)
+// Ассинхронность
+const timeout = setTimeout(() => {
+    console.log('After timeout')
+}, 100) // первый параметр ф-я callback, вторым количество миллисекунд
+// (делим на 1000 и получаем секунды)
+
+clearTimeout(timeout)
+
+const interval = setInterval(() => {
+    console.log('After interval')
+}, 1000) // через какой промежуток времени нужно запускать данный интервал
+
+clearInterval(interval)
+
+const delay = (callback, wait = 1000) => {
+    setTimeout(callback, wait)
 }
-
-greet('Лена')
-
-// function Declaration - можно использовать до и после объявления
-function greet(name) {
-  console.log('Привет - ', name)
-}
-
-console.dir(greet) // смотрим информацию о функции
-
-// Анонимные функции
-let counter = 0
-// setInterval(function(){
-//   console.log(++counter);
-// }, 1000)
-
-const unterval = setInterval(function(){
-  if (vounter === 5) {
-    clearInterval(interval)
-  } else {
-  console.log(++counter)}
+delay(() => {
+    console.log('After 2 seconds')
 }, 1000)
 
-// стрелочные ф-ции
+const delay1 = (wait = 1000) => {
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve()
+        }, wait)
+    })
+    return promise
+}
+
+delay1(2500)
+    .then(() => {
+        console.log('After 2 seconds')
+    })
+    .catch(err => console.error('Error:', err)) // если произошла ошибка
+    .finally(() => console.log('Finally'))
+
+const getData = () => new Promise(resolve => resolve([
+    1, 1, 2, 3, 5, 8, 13
+]))
+
+getData().then(data => console.log(data))
+
+async function asyncExample() {
+    await delay1(3000) // ждем, когда выполнится строчка
+    await getData() // await может применяться только к ассинхронным ф-ям
+}
