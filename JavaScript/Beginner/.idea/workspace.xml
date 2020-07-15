@@ -50,32 +50,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d26a16a-008b-4fa4-be4b-6507b0bbe0ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/1/01_base.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1/02_numbers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1/03_string.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1/04_functions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1/05_arrays.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1/06_objects.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1/07_async.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1/08.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2/02_context.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/2/app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Beginner.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/01_base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/02_numbers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/03_string.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/04_functions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/05_arrays.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/06_objects.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/07_async.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2/prototype.js" beforeDir="false" afterPath="$PROJECT_DIR$/2/01_prototype.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +105,7 @@
       <workItem from="1593255268710" duration="12492000" />
       <workItem from="1593688580995" duration="71000" />
       <workItem from="1593688826270" duration="52000" />
-      <workItem from="1594685874978" duration="4486000" />
+      <workItem from="1594685874978" duration="19428000" />
     </task>
     <servers />
   </component>
