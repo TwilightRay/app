@@ -2,9 +2,6 @@
 function hello() {
     console.log('Hello', this)
 }
-const check = {
-    checked: 'checked'
-}
 
 const person = {
     name: 'Victory',
@@ -30,7 +27,8 @@ const nastya = {
     age: 17
 }
 
-vova.log = person.logInfo.bind(vova, 'frontend vue.js')
+vova.log = person.logInfo
+vova.log('frontend vue.js')
 person.logInfo.call(person, 'frontend react.js')
 person.logInfo.apply(nastya, ['design'])
 
