@@ -85,7 +85,7 @@ function styles() {
 };
 
 function css() {
-  return src(paths.styles.src)
+  return src(paths.styles.css)
   .pipe(cleanCSS(({ level: { 1: { specialComments: 0 } } })))
   .pipe(rename({suffix: '.min'}))
   .pipe(dest(paths.styles.dist))
@@ -97,12 +97,12 @@ function views() {
 };
 
 function watchSet() {
-  watch(paths.styles.src, css)
+  watch(paths.styles.css, css)
   watch(paths.fonts.src, fonts)
   watch(paths.images.src, images)
   watch(paths.scripts.src, scripts)
   watch(paths.static.src, static)
-  watch(paths.styles.src, styles)
+  watch(paths.styles.src, sass)
   watch(paths.views.src, views)
 };
 
