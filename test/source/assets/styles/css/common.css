@@ -1,0 +1,12 @@
+.wrapper{
+  max-width: 1270px;
+}
+
+.wide-background{
+  align-items: center;
+}
+
+.header-background{
+  background-image: url("../media/smile-people.png");
+  height: 500px;
+}

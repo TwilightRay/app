@@ -50,10 +50,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d26a16a-008b-4fa4-be4b-6507b0bbe0ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/2/03_closures.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/.idea/test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../test/css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Beginner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Beginner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2/02_context.js" beforeDir="false" afterPath="$PROJECT_DIR$/2/02_context.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/2/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +88,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../test" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="SvnConfiguration">
@@ -106,6 +109,12 @@
       <workItem from="1593688580995" duration="71000" />
       <workItem from="1593688826270" duration="52000" />
       <workItem from="1594685874978" duration="21879000" />
+      <workItem from="1594967571019" duration="684000" />
+      <workItem from="1594999068491" duration="193000" />
+      <workItem from="1594999373279" duration="1299000" />
+      <workItem from="1595583146571" duration="1900000" />
+      <workItem from="1595585062727" duration="187000" />
+      <workItem from="1595585325114" duration="5000" />
     </task>
     <servers />
   </component>
@@ -128,13 +137,17 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="740" y="315" key="FileChooserDialogImpl" timestamp="1595583447875">
+      <screen x="0" y="40" width="1920" height="1040" />
+    </state>
+    <state x="740" y="315" key="FileChooserDialogImpl/0.40.1920.1040@0.40.1920.1040" timestamp="1595583447875" />
     <state x="457" y="201" key="SettingsEditor" timestamp="1594686649278">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state x="457" y="201" key="SettingsEditor/0.40.1920.1040@0.40.1920.1040" timestamp="1594686649278" />
-    <state x="623" y="265" key="search.everywhere.popup" timestamp="1592288085637">
+    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1595583284963">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
-    <state x="623" y="265" key="search.everywhere.popup/0.40.1920.1040@0.40.1920.1040" timestamp="1592288085637" />
+    <state x="623" y="265" width="672" height="678" key="search.everywhere.popup/0.40.1920.1040@0.40.1920.1040" timestamp="1595583284963" />
   </component>
 </project>
