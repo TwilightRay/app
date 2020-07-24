@@ -4,6 +4,7 @@ const babel = require('gulp-babel');
 const browserSync = require('browser-sync').create();
 const cleanCSS = require('gulp-clean-css');
 const del = require('del');
+const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
@@ -47,6 +48,13 @@ function browserSyncSet() {
   browserSync.watch(paths.src + '/**/*', browserSync.reload)
 };
 
+function css() {
+  return src(paths.styles.css)
+  .pipe(cleanCSS(({ level: { 1: { specialComments: 0 } } })))
+  .pipe(rename({suffix: '.min'}))
+  .pipe(dest(paths.styles.dist))
+}
+
 function delSet() {
   return del(paths.root + '/**/*')
 };
@@ -76,7 +84,7 @@ function static() {
 };
 
 function styles() {
-  return src(paths.styles.src)
+  return src(paths.styles.sass)
   .pipe(sass())
   .pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
   .pipe(cleanCSS(({ level: { 1: { specialComments: 0 } } })))
@@ -84,15 +92,9 @@ function styles() {
   .pipe(dest(paths.styles.dist))
 };
 
-function css() {
-  return src(paths.styles.css)
-  .pipe(cleanCSS(({ level: { 1: { specialComments: 0 } } })))
-  .pipe(rename({suffix: '.min'}))
-  .pipe(dest(paths.styles.dist))
-};
-
 function views() {
   return src(paths.views.src)
+  .pipe(htmlmin({ collapseWhitespace: true, html5: true }))
   .pipe(dest(paths.views.dist))
 };
 
@@ -102,7 +104,7 @@ function watchSet() {
   watch(paths.images.src, images)
   watch(paths.scripts.src, scripts)
   watch(paths.static.src, static)
-  watch(paths.styles.src, sass)
+  watch(paths.styles.sass, styles)
   watch(paths.views.src, views)
 };
 

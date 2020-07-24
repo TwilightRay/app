@@ -2,11 +2,17 @@
   max-width: 1270px;
 }
 
-.wide-background{
+.items-center{
   align-items: center;
+  justify-content: center;
 }
 
-.header-background{
+.header__background{
   background-image: url("../media/smile-people.png");
   height: 500px;
+  position: absolute;
+}
+
+.square-grid{
+  display: grid;
 }
