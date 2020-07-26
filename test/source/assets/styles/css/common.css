@@ -10,7 +10,7 @@ a {
   text-decoration: none;
 }
 
-.wrapper{
+.wrapper, .container{
   margin: 0 auto;
   max-width: 1270px;
 }
@@ -43,7 +43,9 @@ a {
 .square,
 .square__img,
 .square__color,
-.section-header__quote{
+.square_shadow,
+.section-header__quote,
+.container{
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -73,7 +75,12 @@ a {
   background-size: cover;
   background-position: center;
   height: 1258px;
+}
+
+.container{
+  height: 1258px;
   position: relative;
+  flex-flow: column;
 }
 
 .header__header {
@@ -121,7 +128,8 @@ a {
   bottom: 0;
 }
 
-.square_shadow{
+.square__color_shadow{
+  display: inline-table;
 
 }
 
