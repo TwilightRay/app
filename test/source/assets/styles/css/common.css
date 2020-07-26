@@ -43,8 +43,7 @@ a {
 .section-header__string,
 .square,
 .square__img,
-.square__color,
-.square_shadow
+.square__color
 {
   margin: 0 auto;
   display: flex;
@@ -123,6 +122,10 @@ a {
   bottom: 0;
 }
 
+.square_shadow{
+  
+}
+
 .square__color,
 .square__color_shadow{
   width: 235px;
@@ -132,10 +135,6 @@ a {
 
 .square__color{
   height: 219px;
-}
-
-.square__color_shadow{
-
 }
 
 .square__color:last-child, .square__color_shadow:last-child{
