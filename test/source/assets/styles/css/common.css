@@ -1,7 +1,7 @@
 @import url(https://allfont.ru/allfont.css?fonts=dosis-bold);
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 body{
-  margin: 0;
+  margin: 0 auto;
   font-family: 'Dosis Bold', arial;
   color: #2f1946;
 }
@@ -24,7 +24,14 @@ a {
   background-repeat: no-repeat;
 }
 
-.text-uppercase{
+.menu__img,
+.form-sign-up__header,
+.header__header,
+.section-header__header,
+.form-sign-up__facebook,
+.form-sign-up__sign-up-btn,
+.get-started__header,
+.footer-subscribe-form__btn{
   text-transform: uppercase;
 }
 
@@ -32,16 +39,17 @@ a {
 .header__get-started-text,
 .section-header__header,
 .square__box,
-.square__string
+.square__string,
+.section-header__string,
+.square,
+.square__img,
+.square__color,
+.square_shadow
 {
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.square{
-  display: flex;
-  justify-content: center;
 }
 
 .menu__nav{
@@ -67,6 +75,7 @@ a {
   background-size: cover;
   background-position: center;
   height: 1258px;
+  position: relative;
 }
 
 .header__header {
@@ -109,15 +118,27 @@ a {
   display: block;
 }
 
-.square__color{
+.square{
+  position: absolute;
+  bottom: 0;
+}
+
+.square__color,
+.square__color_shadow{
   width: 235px;
-  height: 330px;
-  display: relative;
   margin-right: 40px;
   box-shadow: 0 0 5px rgba(0,0,0,0.25);
 }
 
-.square__color:last-child{
+.square__color{
+  height: 219px;
+}
+
+.square__color_shadow{
+
+}
+
+.square__color:last-child, .square__color_shadow:last-child{
   margin-right: 0;
 }
 
@@ -164,11 +185,37 @@ background-color: #e22028;
   font-size: 32px;
 }
 
+.square_shadow{
+}
+
 .section-header__img{
   background-image: url("../images/-e-Logo Heart-03.png");
   display: block;
   height: 59px;
   width: 57px;
+  margin-right: 12px;
+}
+
+.section-header__header{
+  font-size: 52px;
+}
+
+.section-header__string, .section-header__author{
+  font-size: 30px;
+  width: 785px;
+}
+
+.section-header__string{
+  text-align: center;
+}
+
+.section-header__author{
+  color: #fe4a5d;
+  text-align: right;
+}
+
+.form-sign-up__header{
+  font-size: 38px;
 }
 
 .copyrlite{
