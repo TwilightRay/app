@@ -1,4 +1,4 @@
-@import url(https://allfont.ru/allfont.css?fonts=dosis-bold);
+@import url('https://allfont.ru/allfont.css?fonts=dosis-bold');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 body{
   margin: 0 auto;
@@ -20,7 +20,8 @@ a {
 .header__arrow-down,
 .square__img,
 .section-header__img,
-.form-sign-up__facebook-img{
+.form-sign-up__facebook-img,
+.section-background{
   background-repeat: no-repeat;
 }
 
@@ -30,7 +31,7 @@ a {
 .section-header__header,
 .form-sign-up__facebook,
 .form-sign-up__sign-up-btn,
-.get-started__header,
+.get-started,
 .footer-subscribe-form__btn{
   text-transform: uppercase;
 }
@@ -45,27 +46,41 @@ a {
 .square__color,
 .square_shadow,
 .section-header__quote,
-.container{
+.container,
+.form-sign-up__facebook,
+.form-sign-up__facebook-btn,
+.form-sign-up,
+.form-sign-up__sign-up,
+.form-sign-up__text-with-line,
+.get-started,
+.get-started__circle{
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.section-background,
+.get-started{
+  background-position: center;
+  background-size: cover;
+}
+
 .menu__nav{
   display: none;
+}
+
+.menu__img{
+  font-size: 18px;
 }
 
 .header__logo-img{
   background-image: url("../images/logo.png");
   height: 277px;
   width: 452px;
-  display: flex;
-  margin: 0 auto;
 }
 
 .header{
-  margin: 0 auto;
   display: flex;
   flex-flow: column;
 }
@@ -88,7 +103,6 @@ a {
 }
 
 .header__get-started-btn{
-
   padding: 14px;
   border-radius: 50px;
   background-color: #81398b;
@@ -218,8 +232,113 @@ background-color: #e22028;
   text-align: right;
 }
 
+.section-background{
+  background-image: url("../images/photos.png");
+  height: 552px;
+}
+
+.form-sign-up{
+  flex-flow: column;
+  border-style: solid;
+  border-width: 8px;
+  width: 466px;
+  height: 552px;
+  border-image: linear-gradient(90deg, #e22128 0%, #ee6c1f 42%, #f9b316 100%);
+  border-image-slice: 1;
+  margin: 0 auto;
+}
+
 .form-sign-up__header{
   font-size: 38px;
+  margin: 0;
+  margin-bottom: 35px;
+}
+
+.form-sign-up__facebook-btn,
+.form-sign-up__sign-up-btn,
+.get-started__btn{
+  font-size: 16px;
+  color: white;
+}
+
+.form-sign-up__facebook,
+.form-sign-up__sign-up{
+  width: 301px;
+  height: 41px;
+  border-radius: 4px;
+}
+
+.form-sign-up__input{
+  width: 285px;
+  height: 41px;
+  border-radius: 4px;
+}
+
+.form-sign-up__facebook{
+  background-color: #2f53a3;
+}
+
+.form-sign-up__facebook-img{
+  background-image: url("../images/fb.png");
+  width: 6px;
+  height: 14px;
+  display: block;
+  margin-right: 8px;
+}
+
+.form-sign-up__text-between-line{
+  color: #9a9a9a;
+  font-size: 14px;
+  margin: 13px 8px 15px 8px;
+}
+
+.form-sign-up__line{
+  background-color: #dcdcdc ;
+  width: 132px;
+  height: 2px;
+  border: none;
+}
+
+.form-sign-up__input{
+  border-style: solid;
+  border-color: #dcdcdc;
+  border-width: 2px;
+  margin-bottom: 12px;
+  font-size: 20px;
+	padding-left: 12px;
+
+}
+
+.form-sign-up__input::placeholder {
+  color: #81398b;
+  font-size: 16px;
+  font-family: 'Dosis Bold', arial;
+}
+
+.form-sign-up__sign-up{
+  background-color: #81398b;
+}
+
+.get-started{
+  flex-flow: column;
+  background-image: url("../images/bg.png");
+  height: 730px;
+}
+
+.get-started__header{
+  font-size: 60px;
+}
+
+.get-started__header_low{
+  font-size: 46px;
+}
+
+.get-started__circle{
+  width: 372px;
+  height: 372px;
+  background: white;
+  border-radius: 50%;
+  flex-flow: column;
 }
 
 .copyrlite{

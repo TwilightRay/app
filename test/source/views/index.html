@@ -8,20 +8,20 @@
     <link rel="stylesheet" href="/assets/styles/common.min.css">
 </head>
 <body>
-  <div class="menu">
-    <a class="menu__img">Menu</a>
-    <nav class="menu__nav">
-      <a href="#">ABOUT</a>
-      <a href="#">CONTACT</a>
-      <a href="#">FAQs</a>
-      <a href="#">BLOG</a>
-      <a href="#">ONLINE SAFETY</a>
-      <a href="#">PRIVACY POLICY</a>
-      <a href="#">TERMS OF USE</a>
-    </nav>
-  </div>
 <header>
     <div class="header header__background">
+      <div class="menu">
+        <a class="menu__img">Menu</a>
+        <nav class="menu__nav">
+          <a href="#">ABOUT</a>
+          <a href="#">CONTACT</a>
+          <a href="#">FAQs</a>
+          <a href="#">BLOG</a>
+          <a href="#">ONLINE SAFETY</a>
+          <a href="#">PRIVACY POLICY</a>
+          <a href="#">TERMS OF USE</a>
+        </nav>
+      </div>
       <div class="wrapper">
         <div class="container">
       <a href="#" class="header__logo-img"></a>
@@ -82,32 +82,40 @@
         <p class="section-header__author">- John Lennon</p>
       </div>
     </div>
-    <div class="section-background"></div>
-    <form class="form-sign-up" action="index.html" method="post">
-      <h3 class="form-sign-up__header">It's free to join</h3>
-      <a href="#" class="form-sign-up__facebook">
-        <span class="form-sign-up__facebook-img"></span>
-        Sign up with Facebook
-      </a>
-      <span class="form-sign-up__line"></span>
-      <h4 class="form-sign-up__text-between-line">OR</h4>
-      <span class="form-sign-up__line"></span>
-      <input type="email" name="email" placeholder="Email">
-      <input type="text" name="name" placeholder="Username">
-      <input type="password" name="password" placeholder="Password">
-      <input type="password" name="confirm password" placeholder="Password">
-      <a href="#" class="form-sign-up__sign-up-btn">Let's go</a>
-    </form>
-    <div class="section-background"></div>
   </div>
+    <div class="section-background">
+    <form class="form-sign-up" action="index.html" method="post">
+      <h3 class="form-sign-up__header">It`s free to join</h3>
+      <div class="form-sign-up__facebook">
+        <a href="#" class="form-sign-up__facebook-btn">
+          <span class="form-sign-up__facebook-img"></span>
+          Sign up with Facebook
+        </a>
+      </div>
+      <div class="form-sign-up__text-with-line">
+        <hr class="form-sign-up__line">
+        <h4 class="form-sign-up__text-between-line">
+          OR
+        </h4>
+        <hr class="form-sign-up__line">
+      </div>
+      <input class="form-sign-up__input" type="email" name="email" placeholder="Email">
+      <input class="form-sign-up__input" type="text" name="name" placeholder="Username">
+      <input class="form-sign-up__input" type="password" name="password" placeholder="Password">
+      <input class="form-sign-up__input" type="password" name="confirm password" placeholder="Password">
+      <div class="form-sign-up__sign-up">
+        <a href="#" class="form-sign-up__sign-up-btn">Let's go</a>
+      </div>
+    </form>
+    </div>
 </section>
 <section>
-  <div class="wrapper">
     <div class="get-started">
-      <h2 class="get-started__header">Join now</h2>
-      <h3 class="get-started__header">It's free!</h3>
-      <a href="#" class="get-started__btn"></a>
-    </div>
+      <div class="get-started__circle">
+        <h2 class="get-started__header">Join now</h2>
+        <h3 class="get-started__header_low">It's free!</h3>
+        <a href="#" class="get-started__btn">Get started</a>
+      </div>
   </div>
 </section>
 </main>
