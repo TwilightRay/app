@@ -34,7 +34,6 @@ p, h1, h2, h3, h4{
 .square__img,
 .square__color,
 .square_shadow{
-  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -340,97 +339,55 @@ background-color: #e22028;
   border-radius: 50%;
 
 }
-.circle{
-  border-radius: 50%;
-  flex-flow: column;
-  background: white;
+
+.footer-subscribe-form{
+
 }
 
-.outer-circle{
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(255,255,255,0.4);
-  border-radius: 50%;
+.footer-subscribe-form__label{
+  font-size: 16px;
+  color: #00cfae;
 }
 
-.circle-flower{
-  width: 153px;
-  height: 153px;
+.footer-subscribe-form__input{
+  width: 259px;
+  height: 34px;
+  font-size: 16px;
 }
 
-.circle-like{
-  width: 100px;
-  height: 100px;
+.footer-subscribe-form__input::placeholder{
+  color: #cacaca;
 }
 
-.circle-send-flowers{
-  width: 202px;
-  height: 202px;
+.footer-subscribe-form__btn{
+  color: white;
+  height: 40px;
+  width: 135px;
+  background-color: #00cfae;
+  border-radius: 4px;
+  flex-flow: row wrap;
 }
 
-.circle-genders{
-  width: 159px;
-  height: 159px;
+.menu-nav__item{
+  margin-right: 20px;
 }
 
-.circle-languages{
-  width: 102px;
-  height: 102px;
+.menu-nav__item:last-child{
+  margin-right: 0
 }
 
-.circle-gift{
-  width: 155px;
-  height: 155px;
+.flags{
+  margin-top: 23px;
+  margin-bottom: 23px;
 }
 
-.circle-translation{
-  width: 188px;
-  height: 188px;
+.flag{
+  width: 16px;
+  margin-left: 11px;
 }
 
-.circle-bubbles{
-  width: 133px;
-  height: 133px;
-}
-
-.outer-circle-flower{
-  width: 204px;
-  height: 204px;
-}
-
-.outer-circle-like{
-  width: 134px;
-  height: 134px;
-}
-
-.outer-circle-send-flowers{
-  width: 270px;
-  height: 270px;
-}
-
-.outer-circle-genders{
-  width: 212px;
-  height: 212px;
-}
-
-.outer-circle-languages{
-  width: 113px;
-  height: 113px;
-}
-
-.outer-circle-gift{
-  width: 203px;
-  height: 203px;
-}
-
-.outer-circle-translation{
-  width: 247px;
-  height: 247px;
-}
-
-.outer-circle-bubbles{
-  width: 173px;
-  height: 173px;
+.flag:first-child{
+  margin-left: 0;
 }
 
 .copyrlite{
